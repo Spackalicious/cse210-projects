@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
 
         Console.WriteLine("Let's play Guess the Magic Number!");
@@ -37,6 +37,7 @@ class Program
                     // goto ;
                     // Application.Restart();
                     // Program.Main();
+                    Main();
                 }
             }
     }
