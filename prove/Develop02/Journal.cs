@@ -10,11 +10,11 @@ class Journal
     public void displayJournal()
     {
         Console.WriteLine("What is your journal file called?");
-        string journalName = Console.ReadLine();
-        Console.WriteLine($"Now displaying {journalName} \n");
-        string filename = $"{journalName}.txt";
-            // string[] lines = System.IO.File.ReadAllLines(filename);
-            using(StreamReader sr = File.OpenText(filename))
+        string _journalName = Console.ReadLine();
+        Console.WriteLine($"Now displaying {_journalName} \n");
+        string _filename = $"{_journalName}.txt";
+            // string[] lines = System.IO.File.ReadAllLines(_filename);
+            using(StreamReader sr = File.OpenText(_filename))
             {
                 string s = "";
                 while ((s = sr.ReadLine()) != null) {
@@ -22,34 +22,34 @@ class Journal
                 }
             } 
     }
-    public List<string> appendEntries(List<string> sessionEntries)
+    public List<string> appendEntries(List<string> _sessionEntries)
     {
         Console.WriteLine("Where would you like to save your journal?");
-        string journalName = Console.ReadLine();
-        string journal = $@"{journalName}.txt";
-        using (StreamWriter sw = File.AppendText(journal))
+        string _journalName = Console.ReadLine();
+        string _journal = $@"{_journalName}.txt";
+        using (StreamWriter sw = File.AppendText(_journal))
         {                     
-            foreach (string entry in sessionEntries)
+            foreach (string _entry in _sessionEntries)
             {
-                sw.Write(entry); 
+                sw.Write(_entry); 
             }                                           
         }
-        Console.WriteLine($"Entries saved to {journalName}.txt \n"); 
+        Console.WriteLine($"Entries saved to {_journalName}.txt \n"); 
         // Once session entries has been appended to journal, session entries list should be emptied
-        sessionEntries.Clear();
-        return sessionEntries;
+        _sessionEntries.Clear();
+        return _sessionEntries;
     }
     public void DeleteLastEntry()
     {
     Console.WriteLine("Which journal file's last entry would you like to delete?");
-    string journalName = Console.ReadLine();
-    string filepath = $@"{journalName}.txt";
-    // string filepath = "myJournal.txt";
-    List<string> lines = File.ReadAllLines(filepath).ToList();
+    string _journalName = Console.ReadLine();
+    string _filepath = $@"{_journalName}.txt";
+    // string _filepath = "myJournal.txt";
+    List<string> lines = File.ReadAllLines(_filepath).ToList();
 
     if (lines.Count > 3)
     {
-        File.WriteAllLines(filepath, lines.GetRange(0, lines.Count - 4).ToArray());
+        File.WriteAllLines(_filepath, lines.GetRange(0, lines.Count - 4).ToArray());
         Console.WriteLine($"Last entry deleted \n");
     }
     else {

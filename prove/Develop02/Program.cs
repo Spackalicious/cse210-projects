@@ -6,11 +6,11 @@ class Program
     {
         Console.WriteLine("Welcome to the Journal Program!");
         // user response from main menu
-        string answer;
+        string _answer;
         // control list so prompts do not get reused within a session.
-        List<int> usedInts = new List<int>();
+        List<int> _usedInts = new List<int>();
         // List of entries from current session
-        List<string> sessionEntries = new List<string>();
+        List<string> _sessionEntries = new List<string>();
         do 
         {
             string[] _menuItems = 
@@ -27,71 +27,71 @@ class Program
                 Console.WriteLine(item);
             }
             Console.Write("Please select 1, 2, 3, 4, 5, or 6. ");
-            answer = Console.ReadLine();
+            _answer = Console.ReadLine();
 
-            if (answer == "1")
+            if (_answer == "1")
             {                
                 // This prevents prompts from being reused within the same session
-                PromptGenerator newPrompt = new PromptGenerator();                    
-                    if (usedInts.Count() < 6)
+                PromptGenerator _newPrompt = new PromptGenerator();                    
+                    if (_usedInts.Count() < 6)
                     {
-                        int randomNumber = newPrompt.CreateRandomNumber();
-                        bool isElementPresent = usedInts.Contains(randomNumber);
+                        int _randomNumber = _newPrompt.CreateRandomNumber();
+                        bool isElementPresent = _usedInts.Contains(_randomNumber);
                         if (!isElementPresent) 
                         {
-                            usedInts.Add(randomNumber);
-                            Entry newEntry = new Entry();
-                            newEntry.createEntry(randomNumber, sessionEntries);
+                            _usedInts.Add(_randomNumber);
+                            Entry _newEntry = new Entry();
+                            _newEntry.createEntry(_randomNumber, _sessionEntries);
                         } 
-                        else if (usedInts.Contains(randomNumber))
+                        else if (_usedInts.Contains(_randomNumber))
                         {
                             do {
-                            randomNumber = newPrompt.CreateRandomNumber();
-                            } while (usedInts.Contains(randomNumber));
-                            usedInts.Add(randomNumber);
-                            Entry newEntry = new Entry();
-                            newEntry.createEntry(randomNumber, sessionEntries);
+                            _randomNumber = _newPrompt.CreateRandomNumber();
+                            } while (_usedInts.Contains(_randomNumber));
+                            _usedInts.Add(_randomNumber);
+                            Entry _newEntry = new Entry();
+                            _newEntry.createEntry(_randomNumber, _sessionEntries);
                         }
                     }
                     else{
-                        Entry newEntry = new Entry();
-                        newEntry.createEntry(6, sessionEntries);
+                        Entry _newEntry = new Entry();
+                        _newEntry.createEntry(6, _sessionEntries);
                     }
                                                             
-                // Console.WriteLine($"There are {usedInts.Count()} prompts used.");
+                // Console.WriteLine($"There are {_usedInts.Count()} prompts used.");
                 // Console.WriteLine("These are the random prompt numbers used!");
-                // foreach (int integer in usedInts)
+                // foreach (int integer in _usedInts)
                 // {
                 //     Console.Write(integer + " ");
                 // }
                 // Console.WriteLine(' ');               
             }
-            if (answer == "2")
+            if (_answer == "2")
             {
-                Entry newEntry = new Entry();
-                newEntry.Display(sessionEntries);
+                Entry _newEntry = new Entry();
+                _newEntry.Display(_sessionEntries);
             }
-            if (answer == "3")
+            if (_answer == "3")
             {                
-                Journal newJournal = new Journal();
-                newJournal.displayJournal();
+                Journal _newJournal = new Journal();
+                _newJournal.displayJournal();
             }
-            if (answer == "4") 
+            if (_answer == "4") 
             {
-                Journal newJournal = new Journal();
-                newJournal.appendEntries(sessionEntries);
+                Journal _newJournal = new Journal();
+                _newJournal.appendEntries(_sessionEntries);
             }
-            if (answer == "5")
+            if (_answer == "5")
             {
-                Journal newJournal = new Journal();
-                newJournal.DeleteLastEntry();
+                Journal _newJournal = new Journal();
+                _newJournal.DeleteLastEntry();
             }
 
-            if (answer == "6") 
+            if (_answer == "6") 
             {
                 Console.WriteLine($"Goodbye. \n");
             }
-        } while (answer != "6");        
+        } while (_answer != "6");        
         
     }
 }

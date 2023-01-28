@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class PromptGenerator
 {
-    // static Random randomGenerator = new Random();
-    // public int _random = randomGenerator.Next(0,6); 
+    // static Random _randomGenerator = new Random();
+    // public int _random = _randomGenerator.Next(0,6); 
 
     
     // Constructor
@@ -13,7 +13,7 @@ public class PromptGenerator
     {        
     }
     
-    public string CreatePrompt(int promptNum)
+    public string CreatePrompt(int _promptNum)
     {    
         string[] _prompts = 
         { 
@@ -26,13 +26,13 @@ public class PromptGenerator
             , "You are out of journalling prompts for today! Have at some free journalling."
         };    
 
-        string _promptsGen = _prompts[promptNum];
+        string _promptsGen = _prompts[_promptNum];
         return _promptsGen;        
     }
     public int CreateRandomNumber()
     {
-        Random randomGenerator = new Random();
-        int _random = randomGenerator.Next(0,6);
+        Random _randomGenerator = new Random();
+        int _random = _randomGenerator.Next(0,6);
         return _random;
     }
 }
