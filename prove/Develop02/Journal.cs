@@ -41,11 +41,11 @@ class Journal
     }
     public void DeleteLastEntry()
     {
-    Console.WriteLine("Which journal file's last entry would you like to delete?");
-    string _journalName = Console.ReadLine();
-    string _filepath = $@"{_journalName}.txt";
-    // string _filepath = "myJournal.txt";
-    List<string> lines = File.ReadAllLines(_filepath).ToList();
+        Console.WriteLine("Which journal file's last entry would you like to delete?");
+        string _journalName = Console.ReadLine();
+        string _filepath = $@"{_journalName}.txt";
+        // string _filepath = "myJournal.txt";
+        List<string> lines = File.ReadAllLines(_filepath).ToList();
 
     if (lines.Count > 3)
     {
