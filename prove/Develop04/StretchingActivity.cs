@@ -2,7 +2,7 @@ using System;
 
 class StretchingActivity : Activity
 { 
-    List<string> _stretchingPrompts = new List<string> 
+    private List<string> _stretchingPrompts = new List<string> 
     {
         "Stretch your arms high above your head!"
         , "Curl your toes under your desk and hold them tight!"
@@ -35,7 +35,7 @@ class StretchingActivity : Activity
         while (currentTime < futureTime)
         {         
             Console.Write($"\n\n--- {GetStretchingPrompt()} ---\n\n\n\n");
-            Spinner(duration);
+            Countdown(duration);
             Console.WriteLine("\n");
             currentTime = DateTime.Now;
         }     

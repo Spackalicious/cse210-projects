@@ -2,7 +2,7 @@ using System;
 
 class NatureActivity : Activity
 { 
-    List<string> _naturePrompts = new List<string> 
+    private List<string> _naturePrompts = new List<string> 
     {
         "Picture a blue sky full of wispy white clouds strolling lazily by... "
         , "Imagine a forest full of green shadows and cute, happy animals... "

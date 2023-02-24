@@ -46,5 +46,6 @@ class Program
                     break;
                 }
         } while (_answer != "6");    
+        Console.WriteLine("Goodbye.\n");
     }
 }
