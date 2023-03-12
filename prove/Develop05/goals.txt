@@ -1,0 +1,6 @@
+300
+EternalGoal|Scriptures|Study the scriptures daily|10
+ChecklistGoal|Temple|Attend the temple monthly|20|500|12|1
+SimpleGoal|Give Talk|Speak in Sacrament when asked|100|True
+SimpleGoal|Make a Meal|Give a meal to someone in need|40|False
+EternalGoal|Daily Prayer|Pray each morning and night|10
