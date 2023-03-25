@@ -21,4 +21,9 @@ public class HistorySorter
     {
         // Go through all contacts and find the contact with most contact history. 
     }
+
+    public void ChristmasCardList()
+    {
+        // return the list of contacts and their mailing addresses who I want to send Christmas cards to. 
+    }
 }
