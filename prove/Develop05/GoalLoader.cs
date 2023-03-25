@@ -38,6 +38,7 @@ public class GoalLoader
         {
             using(StreamReader sr = File.OpenText(fullName))
             {
+                // THIS "sr.ReadLine();" will read the first line but not do anything with it. Basically skipping the first line. !!! ***
                 sr.ReadLine();
                 string s = "";
                 while ((s = sr.ReadLine()) != null) {

@@ -1,0 +1,1 @@
+Acquaintance|Roberto|1/1/0001 12:00:00 PM|School|True|roberto@email.com|123456789000|Bolivia>>Event{}2/4/2022 12:00:00 AM{}Party was so awesome!
